@@ -20,3 +20,12 @@ The following options can be specified in your karma configuration under the key
 Option | Default                    | Effect
 ------ | -------------------------- | -------------------------------------------------
 name   | `"name"` in `package.json` | Customize the name shown in the TouchBar popover.
+
+## To Do List
+ * Pass karma server url to helper
+ * Visit url when _waiting for browser_-message is tapped
+ * Show current state (running, failures, etc) in control strip
+ * Build on installation (`node-gyp` or `post-install`-script)
+ * Find proper icon for control strip item
+ * Properly layout progress on larger test suites
+ * Tap failed test to open failed expectation or reveal error message
