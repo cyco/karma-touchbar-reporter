@@ -1,0 +1,14 @@
+{
+  "name": "karma-touchbar-reporter-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "karma start"
+  },
+  "devDependencies": {
+    "jasmine-core": "^2.99.1",
+    "karma": "^2.0.0",
+    "karma-jasmine": "^1.1.1"
+  }
+}
