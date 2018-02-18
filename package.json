@@ -1,0 +1,7 @@
+{
+  "name": "karma-touchbar-reporter",
+  "version": "0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {}
+}
