@@ -54,7 +54,6 @@ static const NSTouchBarItemIdentifier kRunning = @"de.ccl.touchbar.running";
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
     BOOL prepared = self.tracker.browsers != 0 || self.tracker.isRunning || self.tracker.runs != 0;
-    fprintf(stderr, "> %d || %d || %d => %d\n", self.tracker.browsers != 0 , self.tracker.isRunning,self.tracker.runs != 0, prepared);
     if(prepared) {
         self.touchbar.defaultItemIdentifiers = @[ kProjectLabel, kRunning, kResults ];
         NSTextField *field = (NSTextField *)[self.touchbar itemForIdentifier:kRunning].view;

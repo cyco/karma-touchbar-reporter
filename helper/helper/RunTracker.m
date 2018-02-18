@@ -64,12 +64,10 @@
 }
 
 - (void)browserDidConnect {
-    fprintf(stderr, "browserDidConnect\n");
     self.browsers++;
 }
 
 - (void)browserDidDisconnect {
-    fprintf(stderr, "browserDidDisconnect\n");
     if(self.browsers > 0) {
         self.browsers--;
     }
