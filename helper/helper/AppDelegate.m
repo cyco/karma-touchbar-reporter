@@ -32,10 +32,10 @@ static const NSTouchBarItemIdentifier kGroupButton = @"de.ccl.touchbar.group";
 }
 
 - (void)applicationWillFinishLaunching:(NSNotification *)notification {
-    self.tracker = [[RunTracker alloc] init];
+    NSString *name = [[[NSProcessInfo processInfo] arguments] lastObject];
+    self.tracker = [[RunTracker alloc] initWithName:name];
     self.detailsController = [RepoterDetailsController controllerWithTracker:self.tracker];
     self.trayItem = [self makeGroupItem];
-    
     
     NSFileHandle *input = [NSFileHandle fileHandleWithStandardInput];
     self.reader = [MessageReader readerWithHandle:input andDelegate:self.tracker];

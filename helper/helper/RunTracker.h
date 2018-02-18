@@ -10,6 +10,8 @@
 #import "MessageReaderDelegate.h"
 
 @interface RunTracker : NSObject <MessageReaderDelegate>
+- (instancetype)initWithName:(NSString*)name;
+
 @property (readonly) NSString *projectName;
 @property (readonly, getter=isRunning) BOOL running;
 @property (readonly) NSUInteger runs;

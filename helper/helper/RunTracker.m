@@ -21,11 +21,11 @@
 
 @implementation RunTracker
 
-- (instancetype)init
+- (instancetype)initWithName:(NSString*)name;
 {
     self = [super init];
     if (self) {
-        self.projectName = @"karma-touchbar-reporter";
+        self.projectName = name;
         
         self.running = false;
         self.browsers = 0;

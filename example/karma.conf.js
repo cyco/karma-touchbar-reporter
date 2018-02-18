@@ -3,7 +3,10 @@ module.exports = function(config) {
         basePath: "./",
         frameworks: ["jasmine"],
         files: ["index.js"],
-        reporters: ["touchbar","dots"],
-        plugins: [require("../"), 'karma-jasmine']
+        reporters: ["touchbar", "dots"],
+        touchbarReporterConfig: {
+            name: "Test Project"
+        },
+        plugins: [require("../"), "karma-jasmine"]
     });
 };
