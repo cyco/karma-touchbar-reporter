@@ -138,6 +138,7 @@
 				83D452582038FCFD009994A5 /* Sources */,
 				83D452592038FCFD009994A5 /* Frameworks */,
 				83D4525A2038FCFD009994A5 /* CopyFiles */,
+				834087EE203A00D1001572FD /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -179,6 +180,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		834087EE203A00D1001572FD /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo \"$BUILD_DIR/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/$PRODUCT_NAME\" > ~/Desktop/path.txt\n\ncp \"$BUILT_PRODUCTS_DIR/$PRODUCT_NAME\" \"$PROJECT_DIR/$PRODUCT_NAME\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		83D452582038FCFD009994A5 /* Sources */ = {
@@ -312,6 +330,7 @@
 					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SYMROOT = "";
 			};
 			name = Debug;
 		};
@@ -324,6 +343,7 @@
 					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SYMROOT = "";
 			};
 			name = Release;
 		};
