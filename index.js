@@ -18,7 +18,7 @@ var TouchbarReporter = function(baseReporterDecorator) {
 
     var helperPath = Path.resolve(
         __dirname,
-        "./helper/DerivedData/helper/Build/Products/Debug/karma-touchbar-reporter"
+        "./helper/karma-touchbar-reporter"
     );
     var helper = ChildProcess.spawn(helperPath);
 
