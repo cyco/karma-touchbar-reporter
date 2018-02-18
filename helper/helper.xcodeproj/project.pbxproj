@@ -330,7 +330,6 @@
 					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SYMROOT = "";
 			};
 			name = Debug;
 		};
@@ -343,7 +342,6 @@
 					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SYMROOT = "";
 			};
 			name = Release;
 		};
