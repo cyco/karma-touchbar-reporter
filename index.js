@@ -40,7 +40,7 @@ var TouchbarReporter = function(baseReporterDecorator, config) {
 
     var helperPath = Path.resolve(
         __dirname,
-        "./helper/karma-touchbar-reporter"
+        "./build/Release/karma-touchbar-reporter"
     );
     var helper = ChildProcess.spawn(helperPath, [name]);
     function proxyCommand(cmd) {

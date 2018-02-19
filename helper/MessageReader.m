@@ -10,8 +10,8 @@
 
 @interface MessageReader ()
 @property (strong) NSFileHandle *handle;
-@property (weak) id<MessageReaderDelegate> delegate;
 - (void)parseCommunique:(NSString*)string;
+@property (weak) id<MessageReaderDelegate> delegate;
 @end
 
 typedef unichar Message;
@@ -19,7 +19,7 @@ typedef unichar Message;
 + (instancetype)readerWithHandle:(NSFileHandle*)handle andDelegate:(id<MessageReaderDelegate>)delegate {
     MessageReader *instance = [[self alloc] init];
     instance.delegate = delegate;
-    
+
     handle.readabilityHandler = ^(NSFileHandle * _Nonnull handle) {
         NSData *data = [handle availableData];
         NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
@@ -32,7 +32,7 @@ typedef unichar Message;
 }
 
 - (void)parseCommunique:(NSString*)string {
-    for(int i=0; i < string.length; i++) {
+    for(NSUInteger i=0; i < string.length; i++) {
         Message c = [string characterAtIndex:i];
         [self handleMessage:c];
     }
@@ -43,27 +43,27 @@ typedef unichar Message;
         if(m == 'b') {
             [self.delegate browserDidConnect];
         }
-        
+
         if(m == 'B') {
             [self.delegate browserDidDisconnect];
         }
-        
+
         if(m == 'r') {
             [self.delegate runDidStart];
         }
-        
+
         if(m == 'R') {
             [self.delegate runDidStop];
         }
-        
+
         if(m == 's') {
             [self.delegate specDidSucceed];
         }
-        
+
         if(m == 'x') {
             [self.delegate specWasSkipped];
         }
-        
+
         if(m == 'f') {
             [self.delegate specDidFail];
         }

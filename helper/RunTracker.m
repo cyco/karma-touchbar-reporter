@@ -21,12 +21,12 @@
 
 @implementation RunTracker
 
-- (instancetype)initWithName:(NSString*)name;
+- (instancetype)initWithName:(NSString*)name
 {
     self = [super init];
     if (self) {
         self.projectName = name;
-        
+
         self.running = false;
         self.browsers = 0;
         self.failedSpecs = 0;
@@ -41,7 +41,7 @@
     _failedSpecs = 0;
     _succeededSpecs = 0;
     _skippedSpecs = 0;
-    
+
     self.expectedTotal = self.specs;
     self.running = YES;
 }

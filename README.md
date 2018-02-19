@@ -25,7 +25,6 @@ name   | `"name"` in `package.json` | Customize the name shown in the TouchBar p
  * Pass karma server url to helper
  * Visit url when _waiting for browser_-message is tapped
  * Show current state (running, failures, etc) in control strip
- * Build on installation (`node-gyp` or `post-install`-script)
  * Find proper icon for control strip item
  * Properly layout progress on larger test suites
  * Tap failed test to open failed expectation or reveal error message
