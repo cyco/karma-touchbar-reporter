@@ -26,4 +26,3 @@ name   | `"name"` in `package.json` | Customize the name shown in the TouchBar p
  * Find proper icon for control strip item
  * Properly layout progress on larger test suites
  * Tap failed test to open failed expectation or reveal error message
- * Fix obj-c file headers
