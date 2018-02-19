@@ -76,6 +76,10 @@ static const NSTouchBarItemIdentifier kRunning = @"de.ccl.touchbar.running";
     self.touchbar = touchbar;
 }
 
+- (void)openBrowser:(id)sender {
+    [[NSWorkspace sharedWorkspace] openURL:self.tracker.url];
+}
+
 - (nullable NSTouchBarItem *)touchBar:(NSTouchBar *)touchBar makeItemForIdentifier:(NSTouchBarItemIdentifier)identifier
 {
     if ([identifier isEqualToString:kProjectLabel])
@@ -91,6 +95,7 @@ static const NSTouchBarItemIdentifier kRunning = @"de.ccl.touchbar.running";
     {
         NSTextField *label = [NSTextField labelWithString:NSLocalizedString(@"[running]", @"")];
         label.textColor = [NSColor secondaryLabelColor];
+        label.acceptsTouchEvents = YES;
         
         NSCustomTouchBarItem *item = [[NSCustomTouchBarItem alloc] initWithIdentifier:identifier];
         item.view = label;
@@ -107,6 +112,8 @@ static const NSTouchBarItemIdentifier kRunning = @"de.ccl.touchbar.running";
         NSCustomTouchBarItem *item = [[NSCustomTouchBarItem alloc] initWithIdentifier:identifier];
         item.view = label;
         item.visibilityPriority = NSTouchBarItemPriorityHigh;
+        label.action = @selector(openBrowser:);
+        label.target = self;
         
         return item;
     }

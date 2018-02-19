@@ -10,6 +10,7 @@
 
 @interface RunTracker ()
 @property (readwrite) NSString *projectName;
+@property (readwrite) NSURL *url;
 @property (readwrite) BOOL running;
 @property (readwrite) NSUInteger runs;
 @property (readwrite) NSUInteger browsers;
@@ -21,12 +22,13 @@
 
 @implementation RunTracker
 
-- (instancetype)initWithName:(NSString*)name
+- (instancetype)initWithName:(NSString*)name at:(NSURL*)url
 {
     self = [super init];
     if (self) {
         self.projectName = name;
-
+        self.url = url;
+        
         self.running = false;
         self.browsers = 0;
         self.failedSpecs = 0;

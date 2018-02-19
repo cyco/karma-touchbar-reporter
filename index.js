@@ -1,6 +1,7 @@
 var ChildProcess = require("child_process");
 var Path = require("path");
 var FS = require("fs");
+var Util = require("util");
 
 var Commands = {
     onRunStart: "r",
@@ -17,9 +18,9 @@ var Commands = {
 var TouchbarReporter = function(baseReporterDecorator, config) {
     baseReporterDecorator(this);
 
-    var config = config.touchbarReporterConfig || {};
+    var touchbarReporterConfig = config.touchbarReporterConfig || {};
     var name =
-        config.name ||
+        touchbarReporterConfig.name ||
         process.mainModule.paths
             .filter(p => p.indexOf("/node_modules/karma/") === -1)
             .map(p => p.slice(0, -"node_modules".length))
@@ -42,7 +43,16 @@ var TouchbarReporter = function(baseReporterDecorator, config) {
         __dirname,
         "./build/Release/karma-touchbar-reporter"
     );
-    var helper = ChildProcess.spawn(helperPath, [name]);
+    var helper = ChildProcess.spawn(helperPath, [
+        name,
+        Util.format(
+            "%s//%s:%s%s",
+            config.protocol,
+            config.hostname,
+            config.port,
+            config.urlRoot
+        )
+    ]);
     function proxyCommand(cmd) {
         return function() {
             helper.stdin.write(cmd + "\n");

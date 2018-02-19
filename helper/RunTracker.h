@@ -10,9 +10,10 @@
 #import "MessageReaderDelegate.h"
 
 @interface RunTracker : NSObject <MessageReaderDelegate>
-- (instancetype)initWithName:(NSString*)name;
+- (instancetype)initWithName:(NSString*)name at:(NSURL*)url;
 
 @property (readonly) NSString *projectName;
+@property (readonly) NSURL *url;
 @property (readonly, getter=isRunning) BOOL running;
 @property (readonly) NSUInteger runs;
 @property (readonly) NSUInteger browsers;

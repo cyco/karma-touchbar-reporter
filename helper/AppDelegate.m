@@ -32,8 +32,12 @@ static const NSTouchBarItemIdentifier kGroupButton = @"de.ccl.touchbar.group";
 }
 
 - (void)applicationWillFinishLaunching:(NSNotification *)notification {
-    NSString *name = [[[NSProcessInfo processInfo] arguments] lastObject];
-    self.tracker = [[RunTracker alloc] initWithName:name];
+    NSArray <NSString*>* arguments =[[NSProcessInfo processInfo] arguments];
+    NSAssert(arguments.count == 3, @"Arguments must be <project-name> <url>");
+    
+    NSString *name = arguments[1];
+    NSURL *url = [NSURL URLWithString:arguments[2]];
+    self.tracker = [[RunTracker alloc] initWithName:name at:url];
     self.detailsController = [RepoterDetailsController controllerWithTracker:self.tracker];
     self.trayItem = [self makeGroupItem];
     
