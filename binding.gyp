@@ -12,6 +12,7 @@
 
                 "helper/CustomTouchBarItems/ReporterTrayItem.m",
                 "helper/CustomTouchBarItems/ResultsTouchBarItem.m",
+                "helper/NSImage+Tint.m"
             ],
             "conditions": [
                 ['OS=="mac"', {
@@ -23,6 +24,7 @@
                         'libraries': [
                             '-framework Cocoa',
                             '-framework DFRFoundation',
+                            '-framework QuartzCore'
                         ],
                         'include_dirs': [
                             './helper/',
