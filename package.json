@@ -1,7 +1,12 @@
 {
   "name": "karma-touchbar-reporter",
-  "version": "0.1",
+  "version": "0.1.0",
   "main": "index.js",
   "license": "MIT",
+  "description": "A Karma plugin. Displays test results on the TouchBar.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com:cyco/karma-touchbar-reporter.git"
+  },
   "devDependencies": {}
 }
