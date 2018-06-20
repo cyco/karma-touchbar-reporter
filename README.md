@@ -6,11 +6,11 @@ A Karma plugin. Displays test results on the TouchBar.
 
 ## Installation
 
-Make sure you're on _macOS 10.13_ and have _Xcode 9_ installed. `karma-touchbar-reporter` uses a helper program to interface with the TouchBar. To compile the helper simply `cd` into the directory and run `xcodebuild`.
+Make sure you're on _macOS 10.13_, have _Xcode 9_ and _node_ installed. `karma-touchbar-reporter` uses a helper program to interface with the TouchBar. To compile the helper simply `cd` into the directory and run `npm i`.
 
 ```bash
-cd karma-touchbar-reporter/helper
-xcodebuild
+cd karma-touchbar-reporter
+npm i
 ```
 
 ## Options
